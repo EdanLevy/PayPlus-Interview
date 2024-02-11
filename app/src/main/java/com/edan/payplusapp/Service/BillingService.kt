@@ -25,7 +25,7 @@ class BillingService {
     }
 
     suspend fun getBillingList(): List<BillingEntryHeader> {
-        return billingAPI.getBillingList().headers
+        return billingAPI.getBillingList().headers.sortedBy { it.entryNumber }
     }
 
     suspend fun getBillingDetails(id: Long): BillingEntryDetails {

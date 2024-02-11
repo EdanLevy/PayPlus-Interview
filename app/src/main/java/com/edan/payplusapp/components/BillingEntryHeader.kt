@@ -35,13 +35,13 @@ import java.time.format.DateTimeFormatter
 import java.util.Date
 
 
-private val billingSourceToIcon = mapOf(
+internal val billingSourceToIcon = mapOf(
     "Terminal" to R.drawable.ic_pos,
     "Card" to R.drawable.ic_card,
     "Manual" to R.drawable.ic_attendant
 )
 
-private val billingSourceToColor = mapOf(
+internal val billingSourceToColor = mapOf(
     "Terminal" to TerminalSourceColor,
     "Card" to PosSourceColor,
     "Manual" to ManualSourceColor
@@ -53,7 +53,6 @@ fun BillingEntryHeader(entryHeader: BillingEntryHeader, onClick: (BillingEntryHe
     Card(
         modifier = Modifier
             .clickable { onClick(entryHeader) }
-            .padding(4.dp)
             .height(50.dp),
         shape = RoundedCornerShape(4.dp)
     ) {
@@ -95,6 +94,8 @@ fun BillingEntryHeader(entryHeader: BillingEntryHeader, onClick: (BillingEntryHe
                                     .clip(CircleShape)
                                     .background(MainGreen)
                             )
+                        } else {
+                            Text(text = entryHeader.entryNumber.toString())
                         }
                     }
                 }

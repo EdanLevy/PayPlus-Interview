@@ -15,7 +15,7 @@ data class BillingEntryDetails(
     @SerializedName("cardType") val cardType: String,
     @SerializedName("issuer") val issuer: String,
     @SerializedName("source") val source: String,
-    @SerializedName("terminalNumber") val terminalNumber: String,
-    @SerializedName("approvelNumber") val approvelNumber: String,
+    @SerializedName("terminalName") val terminalName: String,
+    @SerializedName("approvalNumber") val approvalNumber: String,
     @SerializedName("voucherNumber") val voucherNumber: String
 )
